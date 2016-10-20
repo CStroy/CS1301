@@ -11,6 +11,18 @@ public class PersonFine {
     String type;
     double fine;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getFine() {
+        return fine;
+    }
+
     public PersonFine(String name, String type, double fine){
         this.name = name;
         this.type = type;
