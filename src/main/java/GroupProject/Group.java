@@ -14,17 +14,16 @@ public class Group {
 
     public static void main(String[] args) {
         startup();
-        int option = displayOptionsAndGetSelection();
-        makeSelection(option);
     }
 
     public static int displayOptionsAndGetSelection() {
         System.out.println("\nPlease select an option from below: \n");
         System.out.println("Option 1: Record fines");
         System.out.println("Option 2: ");
-        System.out.println("Option 3: ");
-        System.out.println("Option 4: ");
-        System.out.println("Option 5: ");
+        System.out.println("Option 3: Display all People, Fines, and Violation");
+        System.out.println("Option 4: Search for someone in the Fine Database");
+        System.out.println("Option 5: Display only People in the Fine Database1" +
+                "");
         System.out.println("Option 6: ");
         System.out.println("Option 7: ");
 
@@ -154,6 +153,9 @@ public class Group {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Get a new Option
+        int option = displayOptionsAndGetSelection();
+        makeSelection(option);
     }
 
     //*********** HELPERS *************//
@@ -223,6 +225,8 @@ public class Group {
 
             System.out.print(".");
         }
+        int option = displayOptionsAndGetSelection();
+        makeSelection(option);
     }
     }
 

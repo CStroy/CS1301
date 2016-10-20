@@ -6,23 +6,21 @@ import java.util.Scanner;
 public class utasdf {
 
     public static void main(String[] args) {
+       boolean done = false;
         Scanner scanner = new Scanner(System.in);
+        while (!done){
+            // get the name
+            String name = scanner.nextLine();
+            if(name.equals("Q")){
+                done = true;
+            }
+            else{
+                //get the type
+                String ticketTpye = scanner.nextLine();
+                //get the amount
+                double amiunt = scanner.
+            }
 
-        System.out.println("Whats your weight");
-        double weight = scanner.nextDouble();
-        System.out.println("Whats your height");
-        double height = scanner.nextDouble();
-
-        double bmi = (weight * 703)/ (height * height);
-
-        if((int)bmi >= 25){
-            System.out.println("Overweight");
-        }
-        else if ((int)bmi > 17 && (int)bmi < 25){
-            System.out.println("Normal");
-        }
-        else{
-            System.out.println("You dead");
         }
     }
 }
