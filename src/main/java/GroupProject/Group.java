@@ -19,25 +19,40 @@ public class Group {
     public static int displayOptionsAndGetSelection() {
         System.out.println("\nPlease select an option from below: \n");
         System.out.println("Option 1: Record fines");
-        System.out.println("Option 2: ");
+        System.out.println("Option 2: Create a sorted list of names");
         System.out.println("Option 3: Display all People, Fines, and Violation");
         System.out.println("Option 4: Search for someone in the Fine Database");
-        System.out.println("Option 5: Display only People in the Fine Database1" +
-                "");
-        System.out.println("Option 6: ");
+        System.out.println("Option 5: Display only People in the Fine Database");
+        System.out.println("Option 6: Replace a ticket type");
         System.out.println("Option 7: ");
 
         System.out.println("\nPlease enter 1 - 7 to select an option:\r");
-        Scanner input = new Scanner(System.in);
-        int i =  input.nextInt();
-        return i;
+        int i;
+        try{
+            Scanner input = new Scanner(System.in);
+            i =  input.nextInt();
+            if(i < 1 || i > 7){
+                displayOptionsAndGetSelection();
+            }
+        } catch (InputMismatchException e){
+            System.out.println("You entered an invalid response. Please enter between 1 and 7");
+            i = -1;
+            displayOptionsAndGetSelection();
+
+        }
+    return i;
     }
 
 
     public static void makeSelection(int option){
         switch (option){
+            case -1:
+                break;
             case 1:
                 option1();
+                break;
+            case 2:
+                option2();
                 break;
             case 3:
                 option3();
@@ -47,6 +62,9 @@ public class Group {
                 break;
             case 5:
                 option5();
+                break;
+            case 6:
+                option6();
                 break;
         }
     }
@@ -67,6 +85,51 @@ public class Group {
         int option = displayOptionsAndGetSelection();
         makeSelection(option);
     }
+
+    public static void option2() {
+        if(option1Selected) {
+            String home = System.getProperty("user.home");
+            String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
+            String line = "";
+            String csvDelimiter = ",";
+            ArrayList<String> unsortedList = new ArrayList<>();
+
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+
+                while ((line = br.readLine()) != null) {
+                    String[] person = line.split(csvDelimiter);
+                    unsortedList.add(person[0]);
+                }
+                Collections.sort(unsortedList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                File file = new File(home + File.separator + "Desktop" + File.separator + "sorted.csv");
+
+                // if file doesnt exists, then create it
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                BufferedWriter bw = new BufferedWriter(fw);
+                for (String s  : unsortedList) {
+                    bw.write(s);
+                    bw.newLine();
+                }
+
+                bw.close();
+
+                System.out.println("Saving...");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        // Get a new Option
+        int option = displayOptionsAndGetSelection();
+        makeSelection(option);
+        }
 
     public static void option3() {
         if (option1Selected) {
@@ -158,6 +221,15 @@ public class Group {
         makeSelection(option);
     }
 
+    public static void option6() {
+        System.out.println("Please enter the ticket type you would like to replace");
+        String type = input.nextLine();
+        System.out.println("Please enter te ne ticket type");
+        String newType = input.nextLine();
+
+
+    }
+
     //*********** HELPERS *************//
 
     /**
@@ -228,6 +300,9 @@ public class Group {
         int option = displayOptionsAndGetSelection();
         makeSelection(option);
     }
-    }
+
+}
+
+
 
 
