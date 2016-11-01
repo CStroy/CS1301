@@ -91,9 +91,7 @@ public class Group {
 
                     // use comma as separator
                     String[] person = line.split(csvDelimiter);
-
-                    System.out.println(person[0] + "," + person[1] + "," + person[2]);
-
+                    System.out.println(person[0] + " | " + person[1] + " | " + person[2]);
                 }
 
             } catch (IOException e) {
