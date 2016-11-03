@@ -219,6 +219,9 @@ public class Group {
         makeSelection(option);
     }
 
+    private static void option7() {
+
+    }
 
     //*********** HELPERS *************//
 

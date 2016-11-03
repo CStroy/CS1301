@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9911f0c5-2395-4556-9b83-bc5cd68c774d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Assignment4/Problem1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Assignment5/Assignment5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GroupProject/Group.class" afterPath="$PROJECT_DIR$/target/classes/GroupProject/Group.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GroupProject/Group.java" afterPath="$PROJECT_DIR$/src/main/java/GroupProject/Group.java" />
     </list>
@@ -29,11 +26,11 @@
     <favorites_list name="1301_Troy" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Assignment5.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Assignment5/Assignment5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="210">
               <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
               <folding>
                 <element signature="method#percentEven#0;class#Assignment5#0" expanded="false" />
@@ -43,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Problem1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Problem1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Assignment4/Problem1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -56,6 +53,26 @@
                 <element signature="method#coinFlip#0;class#Problem1#0" expanded="false" />
                 <element signature="method#flipLines#0;class#Problem1#0" expanded="false" />
                 <element signature="method#runningSum#0;class#Problem1#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Group.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GroupProject/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="222" column="8" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
+              <folding>
+                <element signature="method#option2#0;class#Group#0" expanded="false" />
+                <element signature="method#option3#0;class#Group#0" expanded="false" />
+                <element signature="method#option4#0;class#Group#0" expanded="false" />
+                <element signature="method#option5#0;class#Group#0" expanded="false" />
+                <element signature="method#option6#0;class#Group#0" expanded="false" />
+                <element signature="method#displayOptionsAndGetSelection#0;class#Group#0" expanded="false" />
+                <element signature="method#makeSelection#0;class#Group#0" expanded="false" />
+                <element signature="method#addPerson#0;class#Group#0" expanded="false" />
+                <element signature="method#startup#0;class#Group#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -105,11 +122,11 @@
         <option value="$PROJECT_DIR$/src/main/java/utasdf.java" />
         <option value="$PROJECT_DIR$/src/main/java/HarvardRequirements/Requirements.java" />
         <option value="$PROJECT_DIR$/src/main/java/NadiGroupProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GroupProject/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/classwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/Assignment4/AssignmentFour.java" />
         <option value="$PROJECT_DIR$/src/main/java/Assignment4/Problem1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Assignment5/Assignment5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GroupProject/Group.java" />
       </list>
     </option>
   </component>
@@ -161,7 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,9 +235,36 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GroupProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1301_Troy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1301_Troy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -794,12 +837,14 @@
       <workItem from="1476996660521" duration="3935000" />
       <workItem from="1477094474323" duration="4843000" />
       <workItem from="1477269386593" duration="8303000" />
-      <workItem from="1477619410545" duration="11187000" />
+      <workItem from="1477619410545" duration="11457000" />
+      <workItem from="1478205810490" duration="245000" />
+      <workItem from="1478206311177" duration="111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76392000" />
+    <option name="totallyTimeSpent" value="77018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
@@ -807,14 +852,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356688" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Anonymous Apex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3808917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21146497" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -826,12 +869,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32356688" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3808917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -855,7 +900,7 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="35" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -944,27 +989,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/HarvardRequirements/Requirements.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/NadiGroupProject.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/classwork.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/GroupProject/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding>
-            <element signature="method#option1#0;class#Group#0" expanded="false" />
-            <element signature="method#option2#0;class#Group#0" expanded="false" />
-            <element signature="method#option4#0;class#Group#0" expanded="false" />
-            <element signature="method#option5#0;class#Group#0" expanded="false" />
-            <element signature="method#option6#0;class#Group#0" expanded="false" />
-            <element signature="method#displayOptionsAndGetSelection#0;class#Group#0" expanded="false" />
-            <element signature="method#makeSelection#0;class#Group#0" expanded="false" />
-            <element signature="method#addPerson#0;class#Group#0" expanded="false" />
-            <element signature="method#startup#0;class#Group#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Assignment5/Assignment5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="210">
           <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="method#percentEven#0;class#Assignment5#0" expanded="false" />
@@ -985,6 +1012,24 @@
             <element signature="method#coinFlip#0;class#Problem1#0" expanded="false" />
             <element signature="method#flipLines#0;class#Problem1#0" expanded="false" />
             <element signature="method#runningSum#0;class#Problem1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GroupProject/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="222" column="8" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
+          <folding>
+            <element signature="method#option2#0;class#Group#0" expanded="false" />
+            <element signature="method#option3#0;class#Group#0" expanded="false" />
+            <element signature="method#option4#0;class#Group#0" expanded="false" />
+            <element signature="method#option5#0;class#Group#0" expanded="false" />
+            <element signature="method#option6#0;class#Group#0" expanded="false" />
+            <element signature="method#displayOptionsAndGetSelection#0;class#Group#0" expanded="false" />
+            <element signature="method#makeSelection#0;class#Group#0" expanded="false" />
+            <element signature="method#addPerson#0;class#Group#0" expanded="false" />
+            <element signature="method#startup#0;class#Group#0" expanded="false" />
           </folding>
         </state>
       </provider>
