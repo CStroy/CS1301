@@ -9,10 +9,15 @@ public class Assignment5 {
     public static void main(String[] args) {
         int[] num = new int[] {1,2,3};
         int[] num2 = new int[] {1,2,3};
+        int[] num3 = new int[] {4,5,6};
+        int[] num4 = new int[] {1,2,3,4,5,1,2,3,1,2};
+        int[] array = append(num,num2);
+
         System.out.println(percentEven(num));
         System.out.println(equals(num,num2));
-        int[] array = append(num,num2);
         System.out.println(Arrays.toString(array));
+        swapAll(num, num3);
+        System.out.println(longestSortedSequence(num4));
     }
 
     //Return the percentage of even numbers in the Array
@@ -66,8 +71,30 @@ public class Assignment5 {
         for (int i = 0; i < array2.length; i++) {
             for (int j = array1.length; j < array1.length + array2.length; j++) {
                 appendedArray[j] = array2[i];
+                i++;
             }
         }
         return appendedArray;
+    }
+
+    public static void swapAll(int[] array1, int[] array2) {
+        int[] tempArray1 = array1.clone();
+        for (int i = 0; i < array1.length; i++) {
+            tempArray1[i] = array2[i];
+            array2[i] = array1[i];
+            array1[i] = tempArray1[i];
+        }
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+    }
+
+    public static int longestSortedSequence(int[] array) {
+        int count = 0;
+        for (int i = 1; i < array.length; i++) {
+            if ( array[i] - (array[i-0]) == 1) {
+                count++;
+            }
+        }
+        return count;
     }
 }

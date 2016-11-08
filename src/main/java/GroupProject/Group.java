@@ -19,6 +19,7 @@ public class Group {
     //************* OPTIONS **************//
 
     private static void option1() {
+        System.out.println("Enter 'Q' when done");
         boolean done = false;
         while (!done){
             done = addPerson();
@@ -297,7 +298,7 @@ public class Group {
         System.out.println("Enter the Name: ");
         String name = input.nextLine();
 
-        if(!name.equals("Q")){
+        if(!name.equalsIgnoreCase("Q")){
             System.out.println("Enter the type: ");
             String type = input.nextLine();
 
