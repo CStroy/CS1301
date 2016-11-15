@@ -19,6 +19,7 @@ public class Group {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     private static ArrayList<PersonFine> people = new ArrayList<>();
+    private static ArrayList<PersonFine> p = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     private static boolean option1Selected;
 
@@ -134,9 +135,9 @@ public class Group {
                 e.printStackTrace();
             }
             if (found) {
-                System.out.println("We found a match");
+                System.out.println(ANSI_GREEN + "We found a match"+ ANSI_RESET);
             } else {
-                System.out.println("Sorry, no one matches that name");
+                System.out.println(ANSI_RED + "Sorry, no one matches that name" + ANSI_RESET);
             }
             // Get a new Option
             int option = displayOptionsAndGetSelection();
@@ -193,29 +194,43 @@ public class Group {
         System.out.println("What is the new fine type?");
         String newType = input.nextLine();
 
-        ArrayList<String> s = new ArrayList<>();
-        ArrayList<String[]> newFiles = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
-            int i = 0;
             while ((line = br.readLine()) != null) {
-
                 // use comma as separator
                 String[] types = line.split(csvDelimiter);
-                for (int j = 0; j < line.length(); j++) {
-                    s.add(j, types[j]);
+                if(types[1].equals(replaceType)){
+                    PersonFine person = new PersonFine(types[0], newType, Double.parseDouble(types[2]));
+                    p.add(person);
                 }
-
-                if (types[1].equals(replaceType)) {
-                    s.add(i, newType);
+                else {
+                    PersonFine person = new PersonFine(types[0], types[1], Double.parseDouble(types[2]));
+                    p.add(person);
                 }
-
-                i++;
             }
-        }catch (IOException f) {
-            f.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        try {
+            String home = System.getProperty("user.home");
+            File file = new File(home + File.separator + "Desktop" + File.separator + "people.csv");
 
+            // if file doesnt exists, then create it
+            if (file.exists()) {
+                file.delete();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (PersonFine pl  : p) {
+                bw.write(pl.getName() + "," + pl.getType() + "," + pl.getFine());
+                bw.newLine();
+            }
+            bw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // Get a new Option
         int option = displayOptionsAndGetSelection();
