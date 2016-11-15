@@ -8,9 +8,24 @@ import java.util.concurrent.TimeUnit;
  * Created by troy.hill on 10/11/16.
  */
 public class Group {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+
     private static ArrayList<PersonFine> people = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     private static boolean option1Selected;
+
+    static String home = System.getProperty("user.home");
+    static String line = "";
+    static String csvDelimiter = ",";
+
 
     public static void main(String[] args) {
         startup();
@@ -24,7 +39,7 @@ public class Group {
         while (!done){
             done = addPerson();
         }
-        System.out.println("\n | Ok, make a new selection | \n");
+        System.out.println(ANSI_BLUE + "\n| Ok, make a new selection | \n" + ANSI_RESET);
 
         // Mark this option as selected
         option1Selected = true;
@@ -36,13 +51,9 @@ public class Group {
 
     private static void option2() {
         if(option1Selected) {
-            String home = System.getProperty("user.home");
-            String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
-            String line = "";
-            String csvDelimiter = ",";
             ArrayList<String> unsortedList = new ArrayList<>();
 
-            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
 
                 while ((line = br.readLine()) != null) {
                     String[] person = line.split(csvDelimiter);
@@ -81,12 +92,7 @@ public class Group {
 
     private static void option3() {
         if (option1Selected) {
-            String home = System.getProperty("user.home");
-            String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
-            String line = "";
-            String csvDelimiter = ",";
-
-            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
 
                 while ((line = br.readLine()) != null) {
 
@@ -111,12 +117,7 @@ public class Group {
             System.out.println("Please enter a name to see if they are on the fine list");
             String searchName = input.nextLine();
 
-            String home = System.getProperty("user.home");
-            String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
-            String line = "";
-            String csvDelimiter = ",";
-
-            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
 
                 while ((line = br.readLine()) != null) {
 
@@ -143,12 +144,8 @@ public class Group {
     }
 
     private static void option5() {
-        String home = System.getProperty("user.home");
-        String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
-        String line = "";
-        String csvDelimiter = ",";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
 
             ArrayList<String> peopleList = new ArrayList<>();
             while ((line = br.readLine()) != null) {
@@ -170,12 +167,7 @@ public class Group {
     private static void option6() {
         System.out.println("Please enter the type of ticket you would like to change from the list below:");
 
-        String home = System.getProperty("user.home");
-        String csvFile = home + File.separator + "Desktop" + File.separator + "people.csv";
-        String line = "";
-        String csvDelimiter = ",";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
 
             ArrayList<String> fineTypes = new ArrayList<>();
             while ((line = br.readLine()) != null) {
@@ -201,19 +193,29 @@ public class Group {
         System.out.println("What is the new fine type?");
         String newType = input.nextLine();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
+        ArrayList<String> s = new ArrayList<>();
+        ArrayList<String[]> newFiles = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(getFileLocation("people.csv")))) {
+            int i = 0;
             while ((line = br.readLine()) != null) {
 
                 // use comma as separator
                 String[] types = line.split(csvDelimiter);
-                if (types[1].equals(replaceType)) {
-                    
+                for (int j = 0; j < line.length(); j++) {
+                    s.add(j, types[j]);
                 }
+
+                if (types[1].equals(replaceType)) {
+                    s.add(i, newType);
+                }
+
+                i++;
             }
         }catch (IOException f) {
             f.printStackTrace();
         }
+
+
 
         // Get a new Option
         int option = displayOptionsAndGetSelection();
@@ -221,7 +223,15 @@ public class Group {
     }
 
     private static void option7() {
+        File sorted = new File(home + File.separator + "Desktop" + File.separator + "sorted.csv");
+        File people = new File(home + File.separator + "Desktop" + File.separator + "people.csv");
 
+        if (sorted.exists()) {
+            sorted.delete();
+        }
+        if (people.exists()) {
+            people.delete();
+        }
     }
 
     //*********** HELPERS *************//
@@ -238,7 +248,7 @@ public class Group {
         System.out.println("Option 4: Search for someone in the Fine Database");
         System.out.println("Option 5: Display only People in the Fine Database");
         System.out.println("Option 6: Replace a ticket type");
-        System.out.println("Option 7: ");
+        System.out.println("Option 7: Delete the files created");
 
         System.out.println("\nPlease enter 1 - 7 to select an option:\r");
         int i;
@@ -249,10 +259,8 @@ public class Group {
                 displayOptionsAndGetSelection();
             }
         } catch (InputMismatchException e){
-            System.out.println("You entered an invalid response. Please enter between 1 and 7");
+            System.out.println(ANSI_RED + "You entered an invalid response. Please enter between 1 and 7" + ANSI_RESET);
             i = -1;
-            displayOptionsAndGetSelection();
-
         }
         return i;
     }
@@ -264,7 +272,7 @@ public class Group {
     private static void makeSelection(int option){
         switch (option){
             case -1:
-                displayOptionsAndGetSelection();
+                startup();
                 break;
             case 1:
                 option1();
@@ -284,9 +292,20 @@ public class Group {
             case 6:
                 option6();
                 break;
+            case 7:
+                option7();
+                break;
         }
     }
 
+    /**
+     * Returns the location of the file you are trying to access
+     * @param location
+     * @return
+     */
+    private static String getFileLocation(String location) {
+        return home + File.separator + "Desktop" + File.separator + location;
+    }
 
     /**
      * This method adds a person to a temporary list that then writes to a file once "Q" is typed.
@@ -314,7 +333,7 @@ public class Group {
             PersonFine person = new PersonFine(name, type, fineAmount);
             people.add(person);
 
-            System.out.println("Success!, Added " + name + " with a fine of $" + fineAmount + " for " + type + "\n");
+            System.out.println(ANSI_GREEN + "Success!, Added " + name + " with a fine of $" + fineAmount + " for " + type + "\n" + ANSI_RESET);
             return false;
         }
         else {
@@ -333,10 +352,8 @@ public class Group {
                     bw.write(p.getName() + "," + p.getType() + "," + p.getFine());
                     bw.newLine();
                 }
-
                 bw.close();
 
-                System.out.println("Saving...");
                 return true;
             } catch (IOException e) {
                 e.printStackTrace();
@@ -349,7 +366,6 @@ public class Group {
      * Some stupid startup to make it look like a program
      */
     public static void startup() {
-        System.out.println("Welcome to Fine Entry");
         int option = displayOptionsAndGetSelection();
         makeSelection(option);
     }

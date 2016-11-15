@@ -7,17 +7,19 @@ import java.util.Arrays;
  */
 public class Assignment5 {
     public static void main(String[] args) {
-        int[] num = new int[] {1,2,3};
+        int[] num = new int[] {1,2,3,4};
         int[] num2 = new int[] {1,2,3};
-        int[] num3 = new int[] {4,5,6};
-        int[] num4 = new int[] {1,2,3,4,5,1,2,3,1,2};
-        int[] array = append(num,num2);
+        int[] num3 = new int[] {1,2,3};
+        int[] num4 = new int[] {1,2,3};
+        int[] num5 = new int[] {7,8,9};
+        int[] num6 = new int[] {1,2,3,4,5,1,2,3,1,2};
+//        int[] array = append(num,num2);
 
-        System.out.println(percentEven(num));
-        System.out.println(equals(num,num2));
-        System.out.println(Arrays.toString(array));
-        swapAll(num, num3);
-        System.out.println(longestSortedSequence(num4));
+//        System.out.println(percentEven(num));
+        System.out.println(equals(num2,num3));
+//        System.out.println(Arrays.toString(array));
+//        swapAll(num4, num5);
+//        System.out.println(longestSortedSequence(num6));
     }
 
     //Return the percentage of even numbers in the Array
@@ -90,11 +92,20 @@ public class Assignment5 {
 
     public static int longestSortedSequence(int[] array) {
         int count = 0;
+        int highCount = 1;
         for (int i = 1; i < array.length; i++) {
-            if ( array[i] - (array[i-0]) == 1) {
+            if (array[i] - (array[i-1]) == 1) {
                 count++;
             }
+            else{
+                if (count > highCount){
+                    highCount = count;
+                }
+                else{
+
+                }count = 0;
+            }
         }
-        return count;
+        return highCount;
     }
 }

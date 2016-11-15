@@ -15,14 +15,14 @@ public class Problem1 {
 
         // First do problem 1
         String home = System.getProperty("user.home");
-        File miles = new File(home + File.separator + "Desktop" + File.separator + "miles.txt");
-        Scanner scanner = new Scanner(miles);
-        frequentFlier(scanner);
-        System.out.println();
+//        File miles = new File(home + File.separator + "Desktop" + File.separator + "miles.txt");
+//        Scanner scanner = new Scanner(miles);
+//        frequentFlier(scanner);
+//        System.out.println();
 
         // Problem 2
         File words = new File(home + File.separator + "Desktop" + File.separator + "words.txt");
-        scanner = new Scanner(words);
+        Scanner scanner = new Scanner(words);
         printDuplicates(scanner);
         System.out.println();
 
